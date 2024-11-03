@@ -4,7 +4,7 @@ from math import gcd
 
 
 def has_common_factor(x, y):
-    return any(gcd(x, y) % factor == 0 for factor in (2, 3, 5))
+    return any(gcd(x, y) % factor == 0 for factor in (2, 3, 5, 7))
 
 
 def validate_sequence(participants):
@@ -31,7 +31,7 @@ def adjust_sequence(participants):
     return has_common_factor(participants[-1], participants[0])
 
 
-def find_valid_order(participants, max_attempts=3):
+def find_valid_order(participants, max_attempts=10):
     for attempt in range(max_attempts):
         print(f"Attempt {attempt + 1}...")
         random.shuffle(participants)
